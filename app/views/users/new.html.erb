@@ -1,27 +1,29 @@
-<h1>Users#new</h1>
+<h1>Create User</h1>
 <%= form_with model: @user do |f| %>
-  <% if @user.errors.any? %>
-    <div>
-      <ul>
-        <% @user.errors.full_messages.each do |message| %>
-          <li><%= message %></li>
-        <% end %>
-      </ul>
+  <div class="container">
+      <% if @user.errors.any? %>
+        <div class="user-creation-errors" >
+          <ul>
+            <% @user.errors.full_messages.each do |message| %>
+              <li><%= message %></li>
+            <% end %>
+          </ul>
+        </div>
+      <% end %>
+      <div class="input-container">
+        <%= f.label :name %><br>
+        <%= f.text_field :name %>
+      </div>
+      <div class="input-container">
+        <%= f.label :password %><br>
+        <%= f.password_field :password %>
+      </div>
+      <div class="input-container">
+        <%= f.label :password_confirmation %><br>
+        <%= f.password_field :password_confirmation %>
+      </div>
+      <p>
+        <%= f.submit %>
+      </p>
     </div>
-  <% end %>
-  <div>
-    <%= f.label :name %><br>
-    <%= f.text_field :name %>
-  </div>
-  <div>
-    <%= f.label :password %><br>
-    <%= f.password_field :password %>
-  </div>
-  <div>
-    <%= f.label :password_confirmation %><br>
-    <%= f.password_field :password_confirmation %>
-  </div>
-  <p>
-    <%= f.submit %>
-  </p>
 <% end %>
