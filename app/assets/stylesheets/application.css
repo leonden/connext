@@ -22,6 +22,11 @@ table {
   margin: 20px 0;
 }
 
+th,
+td {
+  padding: 0.25rem 0.5rem;
+}
+
 table th {
   background-color: rgb(162, 162, 255);
 }

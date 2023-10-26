@@ -3,8 +3,7 @@ class PagesController < ApplicationController
   def index
   end
 
-  # secret is a private page, only logged-in user can enter
-  def secret
+  def profile
     if current_user.blank?
       render plain: '401 Unauthorized', status: :unauthorized
     end
