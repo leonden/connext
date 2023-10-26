@@ -1,7 +1,6 @@
 class PagesController < ApplicationController
   # index is a public page
   def index
-    binding.break
   end
 
   # secret is a private page, only logged-in user can enter
