@@ -1,11 +1,9 @@
 # Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
 one:
-  name: MyString
-  password_digest: MyString
-  password_confirmation: MyString
+  name: user1
+  password_digest: <%= BCrypt::Password.create('ba4m4n1ngh0ng') %>
 
 two:
-  name: MyString
-  password_digest: MyString
-  password_confirmation: MyString
+  name: user2
+  password_digest: <%= BCrypt::Password.create('ba4m4n1ngh0ng') %>
