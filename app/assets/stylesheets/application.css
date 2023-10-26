@@ -20,16 +20,8 @@
 
 table {
   margin: 20px 0;
-  /*width: 100%;*/
-  border-collapse: collapse;
-}
-
-table th,
-table td {
-  padding: 0 10px;
-  text-align: left;
 }
 
 table th {
-  background-color: #e7e7e7;
+  background-color: rgb(162, 162, 255);
 }
