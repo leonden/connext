@@ -7,8 +7,8 @@
     <tr>
       <th>id</th>
       <th>name</th>
-      <th>action</th>
       <th>role</th>
+      <th>action</th>
       <th></th>
     </tr>
   </thead>
@@ -17,8 +17,8 @@
       <tr>
         <td><%= user.id %></td>
         <td><%= user.name %></td>
-        <td><%= link_to "Edit", edit_user_path(user) %></td>
         <td><%= user.role %></td>
+        <td><%= link_to "Edit", edit_user_path(user) %></td>
         <td>
           <%= link_to "Delete", user, data: { turbo_confirm: "Are you sure you want to delete the user '" + user.name + "'", turbo_method: :delete} %>
         </td>
