@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+  before_action :require_admin, only: :index
   def index
     @users = User.all
   end
@@ -11,6 +12,7 @@ class UsersController < ApplicationController
     @user = User.new(user_params)
 
     if @user.save
+      @user.admin!
       flash[:notice] = "User created successfully"
       redirect_to users_path
     else
@@ -44,6 +46,13 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :password, :password_confirmation)
+    params.require(:user).permit(:name, :role, :password, :password_confirmation)
+  end
+
+  def require_admin
+    unless current_user&.admin?
+      flash[:alert] = "You must be an admin to do that."
+      redirect_to root_path
+    end
   end
 end

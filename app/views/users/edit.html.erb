@@ -13,6 +13,12 @@
     <%= f.label :username %><br>
     <%= f.text_field :username %>
   </div>
+  <div> 
+    <%= f.radio_button :role, :admin %>
+    <%= f.label :admin %><br> 
+    <%= f.radio_button :role, :user %>
+    <%= f.label :user %><br>
+  </div>
   <div>
     <%= f.label :password %><br>
     <%= f.password_field :password %>

@@ -2,6 +2,9 @@
   <h1>Welcome, <%= current_user.name %></h1>
   <%= link_to 'Log out', user_session_path(current_user), data: { turbo_method: :delete } %><br>
   <%= link_to 'Profile', '/pages/profile' %><br>
+  <% if current_user.admin? %>
+    <%= link_to 'Admin Dashboard', '/users' %><br>
+  <% end %>
 <% else %>
   <h1>connext</h1>
   <%= link_to 'Login', new_user_session_path %><br>
